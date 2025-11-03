@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Car Rental Service</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #007BFF; color: white; padding: 1rem; text-align: center; }
+    nav a { color: white; margin: 0 1rem; text-decoration: none; }
+    main { padding: 1rem; max-width: 800px; margin: auto; }
+    .car-info img { max-width: 100%; height: auto; border-radius: 8px; }
+    form { margin-top: 2rem; }
+    label { display: block; margin-top: 1rem; }
+    input, textarea { width: 100%; padding: 0.5rem; margin-top: 0.3rem; }
+    button { margin-top: 1rem; padding: 0.7rem 1.2rem; background: #007BFF; color: white; border: none; cursor: pointer; }
+    footer { text-align: center; padding: 1rem; background: #f4f4f4; margin-top: 2rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Car Rental</h1>
+    <nav>
+      <a href="#car">Car Details</a>
+      <a href="#booking">Book Now</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+  <main>
+    <section id="car" class="car-info">
+      <h2>Available Car</h2>
+      <img src="https://via.placeholder.com/600x300?text=Your+Car+Photo" alt="My Rental Car"/>
+      <p>Model: Baleno | Year: 2022 | Fuel: Petrol | AC Available</p>
+      <p>Rental Price: ₹1500 per day</p>
+    </section>
+
+    <section id="booking">
+      <h2>Book Your Rental</h2>
+      <form id="bookingForm">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" required/>
+
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required/>
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" required/>
+
+        <label for="startDate">Rental Start Date</label>
+        <input type="date" id="startDate" name="startDate" required/>
+
+        <label for="endDate">Rental End Date</label>
+        <input type="date" id="endDate" name="endDate" required/>
+
+        <button type="submit">Submit Booking Request</button>
+      </form>
+      <p id="responseMessage"></p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact Us</h2>
+      <p>Email: shaikabdulshukur7585@gmail.com</p>
+      <p>Phone: +91-9912604827</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 My Car Rental. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // For now, just show a confirmation message
+      document.getElementById('responseMessage').textContent = 'Thank you for your booking request! We will contact you shortly.';
+      this.reset();
+    });
+  </script>
+</body>
+</html>
